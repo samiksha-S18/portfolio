@@ -1,0 +1,262 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  background: linear-gradient(-45deg, #0b1220, #111827, #1f2933, #0b1220);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* FLOATING BLOBS */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.bg-animation span {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(236, 72, 153, 0.15);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 20s infinite ease-in-out;
+}
+
+.bg-animation span:nth-child(1) { top: 10%; left: 10%; }
+.bg-animation span:nth-child(2) { top: 50%; left: 70%; animation-delay: 5s; }
+.bg-animation span:nth-child(3) { top: 80%; left: 30%; animation-delay: 10s; }
+
+@keyframes float {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(40px,-60px); }
+  100% { transform: translate(0,0); }
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.logo { color: #ec4899; }
+
+header a {
+  color: #e5e7eb;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero span { color: #ec4899; }
+
+/* BUTTONS */
+.btn {
+  padding: 10px 25px;
+  background: #ec4899;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid #ec4899;
+}
+
+.btn-small {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+.resume-btn {
+  display: block;
+  margin: 18px auto 0;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 90px 60px;
+  scroll-margin-top: 100px;
+}
+
+/* ABOUT */
+.about-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-img img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid #ec4899;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(236,72,153,0.5);
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  line-height: 1.8;
+  color: #d1d5db;
+  margin-bottom: 10px;
+}
+
+/* SKILLS */
+.skills-box span {
+  background: #111827;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* EXPERIENCE */
+.experience-card {
+  background: #111827;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border-left: 4px solid #ec4899;
+}
+
+.experience-card span {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* PROJECTS */
+.project-card {
+  background: #111827;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* CONTACT */
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.socials {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.socials a {
+  font-size: 28px;
+  color: #ec4899;
+  margin: 0 15px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111827;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* CUSTOM CURSOR */
+.cursor,
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+  z-index: 9999;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #ec4899;
+}
+
+.cursor-follower {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #ec4899;
+  opacity: 0.6;
+  transition: all 0.2s ease-out;
+}
+
+/* HOVER EFFECTS ON BUTTONS AND LINKS */
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower,
+.btn:hover ~ .cursor-follower {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: #fff;
+  opacity: 0.9;
+}
