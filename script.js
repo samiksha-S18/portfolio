@@ -1,4 +1,4 @@
-// Scroll reveal animation
+/* Scroll reveal */
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -7,44 +7,41 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Contact form validation
+/* Contact form */
 document.getElementById("contactForm").addEventListener("submit", e => {
   e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-  const msg = document.getElementById("formMsg");
-
-  if (!name || !email || !message) {
-    msg.textContent = "Please fill all fields!";
-    msg.style.color = "red";
-  } else {
-    msg.textContent = "Message sent successfully!";
-    msg.style.color = "lightgreen";
-    e.target.reset();
-  }
+  document.getElementById("formMsg").textContent = "Message sent successfully!";
 });
-// CUSTOM CURSOR
+
+/* Typing effect */
+const text = "Samiksha Khiratkar";
+let i = 0;
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").textContent += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 120);
+  }
+}
+typeEffect();
+
+/* Animated cursor */
 const cursor = document.querySelector(".cursor");
 const follower = document.querySelector(".cursor-follower");
-
-let mouseX = 0, mouseY = 0;
-let posX = 0, posY = 0;
+let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
 document.addEventListener("mousemove", e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  cursor.style.top = mouseY + "px";
   cursor.style.left = mouseX + "px";
+  cursor.style.top = mouseY + "px";
 });
 
-// Smooth trailing for follower
-function animateFollower() {
-  posX += (mouseX - posX) / 6;
-  posY += (mouseY - posY) / 6;
-  follower.style.top = posY + "px";
+function animate() {
+  posX += (mouseX - posX) / 8;
+  posY += (mouseY - posY) / 8;
   follower.style.left = posX + "px";
-  requestAnimationFrame(animateFollower);
+  follower.style.top = posY + "px";
+  requestAnimationFrame(animate);
 }
-animateFollower();
+animate();

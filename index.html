@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samiksha.Bhaurao.Khiratkar | Full Stack Developer</title> 
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samiksha Khiratkar | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<!-- CUSTOM CURSOR -->
+
+<!-- Animated Cursor -->
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
-<!-- BACKGROUND ANIMATION -->
+
+<!-- Background Animation -->
 <div class="bg-animation">
   <span></span>
   <span></span>
   <span></span>
 </div>
-<!-- NAVBAR -->
+
 <header>
   <h2 class="logo">Samiksha</h2>
   <nav>
@@ -29,38 +32,32 @@
     <a href="#contact">Contact</a>
   </nav>
 </header>
+
 <!-- HERO -->
 <section class="hero reveal">
-  <h1>Hi, I'm <span>Samiksha.Bhaurao.Khiratkar</span></h1>
+  <div class="hero-top">
+    <img src="profile.jpeg" alt="Samiksha Khiratkar">
+    <a href="Samiksha_Resume.docx" download class="btn outline glow-btn">
+      Download Resume
+    </a>
+  </div>
+
+  <h1>Hi, I'm <span id="typing"></span></h1>
   <p>Full Stack Developer & Cyber Security Student</p>
 </section>
+
 <!-- ABOUT -->
-<section id="about" class="about-section reveal">
-  <div class="about-container">
-    <!-- LEFT: IMAGE + BUTTON -->
-    <div class="about-img">
-      <img src="profile.jpeg" alt="Samiksha Khiratkar">
-      <a href="Samiksha_Resume.docx" download class="btn btn-small outline resume-btn">
-        Download Resume
-      </a>
-    </div>
-    <!-- RIGHT: ABOUT TEXT -->
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        Motivated Computer Engineering (Cyber Security) student with strong
-        full stack web development skills. Passionate about building secure,
-        scalable, and user-friendly web applications.
-      </p>
-      <p>
-        Hands-on experience through internships and academic projects,
-        continuously improving skills in modern web technologies.
-      </p>
-    </div>
-  </div>
+<section id="about" class="reveal center">
+  <h2>About Me</h2>
+  <p>
+    Motivated Computer Engineering (Cyber Security) student with strong
+    full stack development skills. Passionate about building secure,
+    scalable and user-friendly applications.
+  </p>
 </section>
+
 <!-- SKILLS -->
-<section id="skills" class="reveal">
+<section id="skills" class="reveal center">
   <h2>Skills</h2>
   <div class="skills-box">
     <span>HTML</span>
@@ -68,69 +65,67 @@
     <span>JavaScript</span>
     <span>React</span>
     <span>Node.js</span>
-    <span>SQL</span>
     <span>Python</span>
-    <span>C / C++</span>
+    <span>SQL</span>
     <span>Cyber Security</span>
   </div>
 </section>
+
 <!-- EXPERIENCE -->
-<section id="experience" class="reveal">
+<section id="experience" class="reveal center">
   <h2>Experience</h2>
+
   <div class="experience-card">
-    <h3>Cybersecurity Intern – CodeAlpha</h3>
+    <h3>Cyber Security Intern – CodeAlpha</h3>
     <span>June 2025 – July 2025</span>
-    <p>
-      Worked on vulnerability research, secure coding practices, and
-      cybersecurity concepts including data protection and threat awareness.
-    </p>
+    <p>Worked on vulnerability research and secure coding practices.</p>
   </div>
+
   <div class="experience-card">
     <h3>Intern – AGRESAR Foundation</h3>
     <span>June 2024</span>
-    <p>
-      Conducted surveys, field data collection, and report preparation,
-      improving communication and documentation skills.
-    </p>
+    <p>Survey work, data collection and report preparation.</p>
   </div>
 </section>
+
 <!-- PROJECTS -->
-<section id="projects" class="reveal">
+<section id="projects" class="reveal center">
   <h2>Projects</h2>
+
   <div class="project-card">
-    <h3>Secure Cart – Encrypted E-Commerce Platform</h3>
-    <p>
-      Secure e-commerce platform with MFA authentication,
-      responsive UI, and cybersecurity-driven data protection.
-    </p>
+    <h3>Secure Cart</h3>
+    <p>Encrypted e-commerce platform with MFA authentication.</p>
   </div>
+
   <div class="project-card">
-    <h3>Personal Portfolio Website</h3>
-    <p>
-      Responsive portfolio built using HTML, CSS, and JavaScript
-      with animations and modern UI.
-    </p>
+    <h3>Personal Portfolio</h3>
+    <p>Responsive portfolio using HTML, CSS & JavaScript.</p>
   </div>
 </section>
+
 <!-- CONTACT -->
-<section id="contact" class="reveal">
+<section id="contact" class="reveal center">
   <h2>Contact Me</h2>
+
   <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="email" id="email" placeholder="Your Email">
-    <textarea id="message" placeholder="Your Message"></textarea>
-    <button type="submit" class="btn">Send Message</button>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button class="btn">Send Message</button>
     <p id="formMsg"></p>
   </form>
+
   <div class="socials">
-    <a href="https://linkedin.com/in/samiksha-khiratkar-b63659370/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/samiksha-S18" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:samikshakhiratkar111@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fas fa-envelope"></i></a>
   </div>
 </section>
+
 <footer>
   <p>© 2026 Samiksha Khiratkar</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
